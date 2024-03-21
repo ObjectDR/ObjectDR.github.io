@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Object-Centric Domain Randomization for 3D Shape Reconstruction in the Wild">
+  <meta name="keywords" content="ObjectDR, Domain Randomization, DR, 3D Shape Reconstruction, 3D Object Reconstruction, in the wild, Out-of-Distribution Generalization, OOD, Domain Generalization, DG">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ObjectDR</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title"><span class="is-size-3">[ ObjectDR ]</span> <br> Object-Centric Domain Randomization <br> for 3D Shape Reconstruction in the Wild</h1>
+          <div class="is-size-4 publication-authors" style="margin-top:-18px">
+            <span class="author-block" style="margin-right:12px">
+              <a href="https://jhcho99.github.io/">Junhyeong Cho</a><sup>1</sup></span>
+            <span class="author-block" style="margin-right:12px">
+              <a href="https://kim-youwang.github.io">Kim Youwang</a><sup>2</sup></span>
+            <span class="author-block" style="margin-right:12px">
+              <a href="https://scholar.google.co.kr/citations?user=mDxJj2AAAAAJ&hl=en">Hunmin Yang</a><sup>1,4</sup></span>
+              <span class="author-block">
+              <a href="https://ami.postech.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh</a><sup>2,3,5</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="margin-right:24px"><sup>1</sup>ADD</span>
+            <span class="author-block" style="margin-right:24px"><sup>2</sup>Department of EE, POSTECH</span>
+            <span class="author-block" style="margin-right:24px"><sup>3</sup>Graduate School of AI, POSTECH</span>
+            <span class="author-block"><sup>4</sup>KAIST</span>
+            <br>
+            <span class="author-block"><sup>5</sup>Institute for Convergence Research and Education in Advanced Technology, Yonsei University</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block" style="margin-right:15px">
+                <a href="https://ObjectDR.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block" style="margin-right:15px">
+                <a href="https://ObjectDR.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block" style="margin-right:15px">
+                <a href="#BibTeX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="mailto:ObjectDR.official@gmail.com"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                  <span>Contact</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero teaser" style="margin-top:-40px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Teaser.png"  class="center"/>
+    </div>
+    <h2 class="subtitle has-text-centered" style="margin-top:-12px; margin-left:24px; margin-right:24px;">
+      The proposed data synthesis framework generates large-scale <b>⟨</b>3D shape, 2D image<b>⟩</b>-paired data via a random simulation of visual variations in object appearances and backgrounds.
+      <br><br>
+      <div class="gray-box-custom" style="margin-top:-12px">
+      To facilitate 3D shape reconstruction in the wild, we pre-train a model on our randomized data so that <span style="border-bottom: 2px solid; padding-bottom: 1.5px;"><b>it learns to capture a domain-invariant geometry prior</b></span> which is consistent across domains.
+      <br>
+    </div>
+    </h2>
+  </div>
+</section>
+
+
+<!-- Abstract. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            One of the biggest challenges in single-view 3D shape reconstruction in the wild is the scarcity of <b>⟨</b>3D shape, 2D image<b>⟩</b>-paired data from real-world environments. Inspired by remarkable achievements via domain randomization, we propose <i>ObjectDR</i> which synthesizes such paired data via a random simulation of visual variations in object appearances and backgrounds.
+          </p>
+          <p>
+            Our data synthesis framework exploits a conditional generative model (e.g., ControlNet) to generate images conforming to spatial conditions such as 2.5D sketches, which are obtainable through a rendering process of 3D shapes from object collections (e.g., Objaverse-XL). To simulate diverse variations while preserving object silhouettes embedded in spatial conditions, we also introduce a disentangled framework which leverages an initial object guidance.
+          </p>
+          <p>
+            After synthesizing a wide range of data, we pre-train a model on them so that it learns to capture a domain-invariant geometry prior which is consistent across various domains. We validate its effectiveness by substantially improving 3D shape reconstruction models on a real-world benchmark. In a scale-up evaluation, our pre-training achieves 23.6% superior results compared with the pre-training on high-quality computer graphics renderings. 
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+<br>
+<section class="hero teaser" style="margin-top:-5px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table1.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+
+<!-- Trade-off. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Diversity-Fidelity Trade-Off</h2>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:-5px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Trade-off.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p style="margin-top:40px">
+            To effectively deal with the trade-off, we propose <b>ObjectDR<sub>dis</sub></b> which disentangles the randomization process of object appearances and backgrounds. The proposed framework randomizes object appearances and backgrounds in a separate manner, and then integrates them. Using this disentangled framework, we leverage an initial object guidance which significantly improves the fidelity at the expense of monotonous backgrounds. In parallel, we also enhance the diversity of backgrounds by synthesizing random authentic scenes without being constrained by objects.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+
+
+
+<!-- ObjectDR. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">ObjectDR<sub>dis</sub></h2>
+      </div>
+    </div>
+</section>
+<!-- <br> -->
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Overview.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+
+
+<!-- Synthesis Results. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Synthesis Results</h2>
+      </div>
+    </div>
+    <div class="is-centered has-text-centered content">
+      <p>
+        For the purpose of better visualizations, we draw bounding boxes with red rectangles.
+      </p>
+    </div>
+</section>
+<br>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Result1.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="hero teaser" style="margin-top:-12px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Result2.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="hero teaser" style="margin-top:-12px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Result3.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+
+<!-- Experimental Results. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Experimental Results</h2>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:-5px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure4.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure5.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure6-7.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table2.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table3.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table4.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table5-6.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table7.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure9.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure10.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+
+<!-- Discussion. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Discussion</h2>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/FigureE1.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/FigureE2.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Contact</h2>
+        <div class="is-centered has-text-centered is-size-5">
+          <p>
+            ObjectDR (<a href="mailto:ObjectDR.official@gmail.com">ObjectDR.official@gmail.com</a>)
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+<!-- BibTex. -->
+<hr>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@article{cho2024objectdr,
+      title={Object-Centric Domain Randomization for 3D Shape Reconstruction in the Wild},
+      author={Junhyeong Cho and Kim Youwang and Hunmin Yang and Tae-Hyun Oh},
+      journal={arXiv preprint arXiv:2403.00000},
+      year={2024}
+}</code></pre>
+  </div>
+</section>
+<br><br>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://ObjectDR.github.io">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://jhcho99.github.io/" class="external-link" disabled>
+        <i class="fas fa-user"></i>
+      </a>
+      <a class="icon-link" href="mailto:ObjectDR.official@gmail.com" class="external-link" disabled>
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website template was adapted from <a href="https://nerfies.github.io/">Nerfies website</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
