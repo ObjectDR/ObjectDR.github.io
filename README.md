@@ -1,7 +1,7 @@
 # Object-Centric Domain Randomization for 3D Shape Reconstruction in the Wild
-### [Paper](https://ObjectDR.github.io) | [Project Page](https://ObjectDR.github.io)
+### [Paper](https://arxiv.org/abs/2403.14539) | [Project Page](https://ObjectDR.github.io)
 
-- This is the project page of [Object-Centric Domain Randomization for 3D Shape Reconstruction in the Wild](https://ObjectDR.github.io).
+- This is the project page of [Object-Centric Domain Randomization for 3D Shape Reconstruction in the Wild](https://arxiv.org/abs/2403.14539).
 
 ---
 
@@ -16,7 +16,7 @@ If you find our work useful for your research, please cite our paper:
 @article{cho2024objectdr,
   title={Object-Centric Domain Randomization for 3D Shape Reconstruction in the Wild},
   author={Junhyeong Cho and Kim Youwang and Hunmin Yang and Tae-Hyun Oh},
-  journal={arXiv preprint arXiv:2403.00000},
+  journal={arXiv preprint arXiv:2403.14539},
   year={2024}
 }
 ````
